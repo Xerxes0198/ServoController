@@ -25,6 +25,14 @@ var app = http.createServer(function(request, response)
 
 }).listen(port);
 
+//Setup socket server side
+var io = require('socket.io').listen(app);
+
+io.sockets.on('btn_pressed', function(data)
+{
+	console.log("Button pressed: " + /* Do something with data, Greg!*/);
+});
+
 
 //Log Running
 console.log("Listening for connections (" + port + "):");

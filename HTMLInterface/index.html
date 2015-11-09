@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<script src="/socket.io/socket.io.js"></script>
+		<script>
+		var socketio = io.connect("127.0.0.1:13378");
+
+		socketio.emit("btn_pressed", {DummyData : "Hello, World!"});
+
+		</script>
 	</head>
 
 	<body>
 		Nothing to see here. Move along.
-		<button id="testBtn"> Click Me </button>
+		<button id="testBtn">Click Me</button>
 	</body>
 </html>

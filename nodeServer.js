@@ -10,7 +10,7 @@ var app = http.createServer(function(request, response)
 	console.log("Request receive");
 
 	//Read in the HTML Interface
-	fs.readFile("HTMLInterface/index.html", "utf-8", function(error, data)
+	fs.readFile("interface/index.html", "utf-8", function(error, data)
 	{
 		console.log("File read:" + data);
 		console.log("Error Reads: " + error)

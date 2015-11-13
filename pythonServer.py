@@ -3,7 +3,7 @@ import os
 import time
 import datetime
 import Log
-import getPiValues
+import PiValues
 
 #Debug Stuff
 debug = False
@@ -43,7 +43,7 @@ def updateValues():
 		if debug == True: print "New servo value set."
 		if debug == True: print "Old Value: " + str(Value) + " - New Value: " + str(newValue)
 		if debug == True: print "Reading in Updated Servo Values: " + newValue
-		
+
 		Log.Log("New servo value set.")
 		Log.Log("Reading in Updated Servo Values: " + newValue)
 		Log.Log("Old Value: " + str(Value) + " - New Value: " + str(newValue))
@@ -51,6 +51,11 @@ def updateValues():
 		Value = newValue
 
 	TestServoValue.close()
+
+	return
+
+def getPiValues():
+	
 
 	return
 
@@ -62,6 +67,9 @@ while True:
 
 	#Read in new values
 	updateValues()
+
+	#Get Pi values and write them to a file for the node server to read
+	updatePiValues();
 
 	#Output Values if in Debug
 	if debug == True:outputValues()

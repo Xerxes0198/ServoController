@@ -17,7 +17,7 @@ global Value
 print "Hello, World!..."
 if debug == False: print "Loop Running, silent. (Loop started at: " + str(datetime.datetime.now()) + ")"
 Log.Log("Loop Running. (Loop started at: " + str(datetime.datetime.now()) + ")")
-Log.Log("Current CPU Temp: " + str(getPiValues.getCPUTemp()))
+Log.Log("Current CPU Temp: " + str(PiValues.getCPUTemp()))
 
 
 #Read in initial/current values
@@ -55,7 +55,7 @@ def updateValues():
 	return
 
 def getPiValues():
-	
+
 
 	return
 

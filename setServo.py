@@ -3,6 +3,7 @@ import os
 import time
 import datetime
 import Log
+import getPiValues
 
 #Debug Stuff
 debug = False
@@ -15,8 +16,8 @@ global Value
 #Start Servo Service
 print "Hello, World!..."
 if debug == False: print "Loop Running, silent. (Loop started at: " + str(datetime.datetime.now()) + ")"
-
 Log.Log("Loop Running. (Loop started at: " + str(datetime.datetime.now()) + ")")
+Log.Log("Current CPU Temp: " + str(getPiValues.getCPUTemp()))
 
 
 #Read in initial/current values

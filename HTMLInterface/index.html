@@ -3,15 +3,25 @@
 	<head>
 		<script src="/socket.io/socket.io.js"></script>
 		<script>
-		var socketio = io.connect("127.0.0.1:13378");
+		var socketio = io.connect("192.168.178.47:13378");
 
-		socketio.emit("btn_pressed", {DummyData : "Hello, World!"});
+		function btnPressed()
+		{
+			console.log("Sending request to socket!");
+			var sendData = document.getElementById("textBox").value;
+			console.log("Value in text box to send: " + sendData);
+			socketio.emit("btn_pressed", {DummyData : sendData});
+		}
 
 		</script>
 	</head>
 
 	<body>
-		Nothing to see here. Move along.
-		<button id="testBtn">Click Me</button>
+		<input id="textBox"> </input>
+		<button id="testBtn" onClick="btnPressed()">Click Me</button>
+
+		<div align="right">
+
+		</div>
 	</body>
 </html>

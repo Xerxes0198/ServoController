@@ -28,9 +28,12 @@ var app = http.createServer(function(request, response)
 //Setup socket server side
 var io = require('socket.io').listen(app);
 
-io.sockets.on('btn_pressed', function(data)
+io.sockets.on('connect', function(socket)
 {
-	console.log("Button pressed: " + /* Do something with data, Greg!*/);
+	socket.on("btn_pressed", function(data)
+	{
+		console.log("Button pressed: " + data["DummyData"]);
+	});
 });
 
 

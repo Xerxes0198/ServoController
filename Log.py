@@ -17,6 +17,12 @@ def Log(givenMessage):
 	File.close()
 	return
 
+def writePiValues(givenData):
+	File = open('piValues.txt', 'w')
+	File.write(givenData)
+	File.close
+	return
+
 #If this is a new instance called, write two blank lines for readability
 Log('End Of Log!\n\n')
 

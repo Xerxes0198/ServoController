@@ -55,8 +55,8 @@ def updateValues():
 	return
 
 def updatePiValues():
-
-
+	#Write this in a JSON format for the webserver
+	Log.writePiValues("\{ {name} : {value} \}".format("temp", str(PiValues.getCPUTemp())))
 	return
 
 

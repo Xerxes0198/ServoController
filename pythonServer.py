@@ -54,7 +54,7 @@ def updateValues():
 
 	return
 
-def getPiValues():
+def updatePiValues():
 
 
 	return

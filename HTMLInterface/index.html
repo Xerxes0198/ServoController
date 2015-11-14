@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="/socket.io/socket.io.js"></script>
+		<script>
+		var socketio = io.connect("192.168.178.47:13378");
+
+		function btnPressed()
+		{
+			console.log("Sending request to socket!");
+			var sendData = document.getElementById("textBox").value;
+			console.log("Value in text box to send: " + sendData);
+			socketio.emit("btn_pressed", {DummyData : sendData});
+		}
+
+		</script>
+	</head>
+
+	<body>
+		<input id="textBox"> </input>
+		<button id="testBtn" onClick="btnPressed()">Click Me</button>
+
+		<div align="right">
+
+		</div>
+	</body>
+</html>

@@ -19,7 +19,7 @@ def Log(givenMessage):
 
 def writePiValues(givenData):
 	File = open('piValues.txt', 'w')
-	File.write(givenData)
+	File.write(json.dumps(givenData))
 	File.close
 	return
 

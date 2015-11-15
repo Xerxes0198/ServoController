@@ -4,6 +4,7 @@ import time
 import datetime
 import Log
 import PiValues
+import json
 
 #Debug Stuff
 debug = False
@@ -56,8 +57,7 @@ def updateValues():
 
 def updatePiValues():
 	#Write this in a JSON format for the webserver
-	data = {}
-	data[temp] = PiValues.getCPUTemp()
+	data = json.loads('{"Temp" : ' + PiValues.getCPUTemp + '}')
 	Log.writePiValues(data)
 	return
 

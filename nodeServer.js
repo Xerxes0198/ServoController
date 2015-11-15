@@ -1,19 +1,26 @@
 var http = require('http');
 var fs = require('fs');
+var dataReader = require('./nodeDataReader.js');
 
 //Connection settings
 var port = 13378;
 
+//Global log funciton for thie module
+function modLog(message)
+{
+  console.log("NODE SERVER MODULE: " + message)
+}
+
 var app = http.createServer(function(request, response)
 {
 	//Report hit
-	console.log("Request receive");
+	modLog("Request receive");
 
 	//Read in the HTML Interface
 	fs.readFile("interface/index.html", "utf-8", function(error, data)
 	{
-		console.log("File read:" + data);
-		console.log("Error Reads: " + error)
+		modLog("File read:" + data);
+		modLog("Error Reads: " + error)
 
 		if(error == null)
 		{
@@ -25,6 +32,9 @@ var app = http.createServer(function(request, response)
 
 }).listen(port);
 
+//Attempt to read in the initial values from the python server
+//dataReader.updateData();
+
 //Setup socket server side
 var io = require('socket.io').listen(app);
 
@@ -32,10 +42,9 @@ io.sockets.on('connect', function(socket)
 {
 	socket.on("btn_pressed", function(data)
 	{
-		console.log("Button pressed: " + data["DummyData"]);
+		modLog("Button pressed: " + data["DummyData"]);
 	});
 });
 
-
 //Log Running
-console.log("Listening for connections (" + port + "):");
+modLog("Listening for connections (" + port + "):");

@@ -7,7 +7,7 @@ import PiValues
 import json
 
 #Debug Stuff
-debug = False
+debug = True
 DebugSleepTime = 5
 ReleaseSleepTime = float(0.01) #For some strange reason no sleep delay causes read errors. A small delay seems to help for now
 
@@ -57,7 +57,7 @@ def updateValues():
 
 def updatePiValues():
 	#Write this in a JSON format for the webserver
-	data = json.loads('{"Temp" : ' + PiValues.getCPUTemp + '}')
+	data = json.loads('{"Temp" : ' + str(PiValues.getCPUTemp()) + '}')
 	Log.writePiValues(data)
 	return
 

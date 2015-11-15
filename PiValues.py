@@ -1,6 +1,7 @@
 import os
 import subprocess
 
+
 def getIPAddress():
 	arg = "ip route list"
 	p = subprocess.Popen(arg, shell = True, stdout = subprocess.PIPE)

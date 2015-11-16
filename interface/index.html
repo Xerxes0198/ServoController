@@ -5,6 +5,13 @@
 		<script>
 		var socketio = io.connect("192.168.178.47:13378");
 
+		socketio.on("return_data", function(data)
+		{
+			console.log("Server said: " + data["ServoValue"]);
+			console.log("Server said: " + data["Temp"]);
+			console.log("Server said: " + data);
+		});
+
 		function btnPressed()
 		{
 			console.log("Sending request to socket!");

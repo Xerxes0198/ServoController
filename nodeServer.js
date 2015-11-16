@@ -43,6 +43,7 @@ io.sockets.on('connect', function(socket)
 	socket.on("btn_pressed", function(data)
 	{
 		modLog("Button pressed: " + data["DummyData"]);
+    io.sockets.emit("return_data", dataReader.updateData())
 	});
 });
 

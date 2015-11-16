@@ -11,7 +11,7 @@ function modLog(message)
   console.log("DATA READER MODULE: " + message)
 }
 
-function updateData()
+this.updateData = function()
 {
   if(dataReaderEnabled == true)
   {
@@ -29,6 +29,7 @@ function updateData()
       else
       {
         modLog("Logging data from piValues read: " + data);
+        return data;
       }
     });
   }
@@ -39,7 +40,7 @@ function updateData()
   }
 }
 
-function readInitData()
+this.readInitData = function()
 {
   modLog("Reading initial JSON data from python server...")
 
@@ -66,4 +67,4 @@ function readInitData()
 }
 
 modLog("Node Data Reader instantiated...");
-readInitData();
+this.readInitData();

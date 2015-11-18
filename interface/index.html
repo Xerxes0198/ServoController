@@ -3,23 +3,61 @@
 	<head>
 		<script src="/socket.io/socket.io.js"></script>
 		<script>
-		var socketio = io.connect("192.168.178.47:13378");
+		var socketio;
 
-		socketio.on("return_data", function(data)
-		{
-			console.log("Server said: " + data["ServoValue"]);
-			console.log("Server said: " + data["Temp"]);
-			console.log("Server said: " + data);
-		});
+		var mouseDownCurrently = false;
+		var sliderControl, oldSliderValue;
 
-		function btnPressed()
+		function mouseDownToggle()
 		{
-			console.log("Sending request to socket!");
-			var sendData = document.getElementById("textBox").value;
-			console.log("Value in text box to send: " + sendData);
-			socketio.emit("btn_pressed", {DummyData : sendData});
+			mouseDownCurrently = !mouseDownCurrently;
+			sendMouseUpdates();
 		}
 
+		function sendMouseUpdates()
+		{
+			if(mouseDownCurrently == true)
+			{
+				//Only hassle the socket connection if there is a change in value!
+				if(sliderControl.value != oldSliderValue)
+				{
+					console.log("Sending steering update: " + sliderControl.value);
+
+					//Send Value
+
+					//Update old slider value
+					oldSliderValue = sliderControl.value;
+				}
+				setTimeout(sendMouseUpdates, 30, 1)
+			}
+		}
+
+		window.onload = function()
+		{
+			/*
+			socketio = io.connect("192.168.178.47:13378");
+
+			socketio.on("return_data", function(data)
+			{
+				console.log("Server said: " + data["ServoValue"]);
+				console.log("Server said: " + data["Temp"]);
+				console.log("Server said: " + data);
+			});
+
+			function btnPressed()
+			{
+				console.log("Sending request to socket!");
+				var sendData = document.getElementById("textBox").value;
+				console.log("Value in text box to send: " + sendData);
+				socketio.emit("btn_pressed", {DummyData : sendData});
+			}*/
+
+			//Mouse functions for the servo controller
+			sliderControl =	document.getElementById("steeringSlider");
+			san = "Test";
+			console.log(san);
+			console.log(sliderControl.value);
+		}
 		</script>
 	</head>
 
@@ -28,6 +66,11 @@
 		<button id="testBtn" onClick="btnPressed()">Click Me</button>
 
 		<div align="right">
+
+		</div>
+
+		<div id="controls">
+			<input type="range" id="steeringSlider" min="0" max="100" onmousedown="mouseDownToggle()" onmouseup="mouseDownToggle()">
 
 		</div>
 	</body>

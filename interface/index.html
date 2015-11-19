@@ -24,6 +24,7 @@
 					console.log("Sending steering update: " + sliderControl.value);
 
 					//Send Value
+					socketio.emit("update_servo_value", sliderControl.value );
 
 					//Update old slider value
 					oldSliderValue = sliderControl.value;
@@ -32,9 +33,16 @@
 			}
 		}
 
+		function btnPressed()
+		{
+			console.log("Sending request to socket!");
+			var sendData = document.getElementById("textBox").value;
+			console.log("Value in text box to send: " + sendData);
+			socketio.emit("btn_pressed", {DummyData : sendData});
+		}
+
 		window.onload = function()
 		{
-			/*
 			socketio = io.connect("192.168.178.47:13378");
 
 			socketio.on("return_data", function(data)
@@ -43,14 +51,6 @@
 				console.log("Server said: " + data["Temp"]);
 				console.log("Server said: " + data);
 			});
-
-			function btnPressed()
-			{
-				console.log("Sending request to socket!");
-				var sendData = document.getElementById("textBox").value;
-				console.log("Value in text box to send: " + sendData);
-				socketio.emit("btn_pressed", {DummyData : sendData});
-			}*/
 
 			//Mouse functions for the servo controller
 			sliderControl =	document.getElementById("steeringSlider");

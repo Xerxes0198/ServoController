@@ -18,6 +18,11 @@ this.updateData = function()
   return returnData;
 }
 
+this.writeSteeringValue(newVal)
+{
+  fs.writeFile()
+}
+
 this.readInitData = function()
 {
   modLog("Reading initial JSON data from python server...")

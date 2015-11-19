@@ -47,6 +47,26 @@ io.sockets.on('connect', function(socket)
     console.log(dataReader.updateData());
     io.sockets.emit("return_data", readString)
 	});
+
+  socket.on("update_servo_value", function(data)
+  {
+    console.log("Updateing steering servo to value: " + data);
+
+    var newVal = parseInt(data);
+    if(Number.isInteger(newVal))
+    {
+      if(newVal <= 100 && newVal > 0)
+      {
+        //Write this value to the FS
+      }
+      else
+      {
+        //An invalid value has been passed through the socket connection...
+
+        //Destroy connection??
+      }
+    }
+  });
 });
 
 //Log Running

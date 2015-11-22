@@ -50,7 +50,7 @@ io.sockets.on('connect', function(socket)
 
   socket.on("update_servo_value", function(data)
   {
-    console.log("Updateing steering servo to value: " + data);
+    modLog("Updateing steering servo to value: " + data);
 
     var newVal = parseInt(data);
     if(Number.isInteger(newVal))
@@ -58,10 +58,12 @@ io.sockets.on('connect', function(socket)
       if(newVal <= 100 && newVal > 0)
       {
         //Write this value to the FS
+        dataReader.writeSteeringValue(newVal);
       }
       else
       {
         //An invalid value has been passed through the socket connection...
+        modLog("A bad value was passed to the server!!!!1111oneone");
 
         //Destroy connection??
       }

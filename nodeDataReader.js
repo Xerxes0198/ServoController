@@ -4,6 +4,7 @@ var fs = require('fs');
 
 var readData;
 var inputFileName = 'piValues.txt';
+var servoFileName = 'servovalue';
 var dataReaderEnabled = true;
 
 function modLog(message)
@@ -18,9 +19,11 @@ this.updateData = function()
   return returnData;
 }
 
-this.writeSteeringValue(newVal)
+this.writeSteeringValue = function(newVal)
 {
-  fs.writeFile()
+  modLog("Attempting to write given data to FS");
+
+  fs.writeFile(servoFileName, newVal);
 }
 
 this.readInitData = function()

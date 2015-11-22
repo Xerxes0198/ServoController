@@ -2,12 +2,13 @@
 import os
 import time
 import datetime
-import Log
+import pythonLog
 import PiValues
 import json
+import pythonServoController
 
 #Debug Stuff
-debug = True
+debug = False
 DebugSleepTime = 5
 ReleaseSleepTime = float(0.01) #For some strange reason no sleep delay causes read errors. A small delay seems to help for now
 
@@ -17,13 +18,16 @@ global Value
 #Start Servo Service
 print "Hello, World!..."
 if debug == False: print "Loop Running, silent. (Loop started at: " + str(datetime.datetime.now()) + ")"
-Log.Log("Loop Running. (Loop started at: " + str(datetime.datetime.now()) + ")")
-Log.Log("Current CPU Temp: " + str(PiValues.getCPUTemp()))
+pythonLog.Log("Loop Running. (Loop started at: " + str(datetime.datetime.now()) + ")")
+pythonLog.Log("Current CPU Temp: " + str(PiValues.getCPUTemp()))
 
 
 #Read in initial/current values
 TestServoValue = open('servovalue', 'r')
 Value = TestServoValue.read()
+
+#Test servo call
+pythonServoController.testServos()
 
 #Write Functions Here
 def outputValues():
@@ -45,21 +49,27 @@ def updateValues():
 		if debug == True: print "Old Value: " + str(Value) + " - New Value: " + str(newValue)
 		if debug == True: print "Reading in Updated Servo Values: " + newValue
 
-		Log.Log("New servo value set.")
-		Log.Log("Reading in Updated Servo Values: " + newValue)
-		Log.Log("Old Value: " + str(Value) + " - New Value: " + str(newValue))
+		pythonLog.Log("New servo value set.")
+		pythonLog.Log("Reading in Updated Servo Values: " + newValue)
+		pythonLog.Log("Old Value: " + str(Value) + " - New Value: " + str(newValue))
+
 
 		Value = newValue
 
-	TestServoValue.close()
+		#Send the new value to the servo controller
+		pythonServoController.setSteeringServo(Value)
 
+		TestServoValue.close()
 	return
 
 def updatePiValues():
 	#Write this in a JSON format for the webserver
-	data = json.loads('{"Temp" : ' + str(PiValues.getCPUTemp()) + ', "ServoValue" : ' + str(Value) + '}')
-	Log.writePiValues(data)
-	return
+	try:
+		data = json.loads('{"Temp" : ' + str(PiValues.getCPUTemp()) + ', "ServoValue" : ' + str(Value) + '}')
+		pythonLog.writePiValues(data)
+		return
+	except ValueError:
+		pythonLog.Log("Error parsing JSON data, possible write not finised.")
 
 
 #Begin Service Loop

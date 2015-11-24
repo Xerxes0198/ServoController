@@ -5,15 +5,16 @@ import datetime
 import pythonLog
 import PiValues
 import json
-import pythonServoController
+#import pythonServoController
 
 #Debug Stuff
-debug = False
-DebugSleepTime = 5
+debug = True
+DebugSleepTime = 1
 ReleaseSleepTime = float(0.01) #For some strange reason no sleep delay causes read errors. A small delay seems to help for now
 
 #Global
-global Value
+program_error = False
+servos = []
 
 #Start Servo Service
 print "Hello, World!..."
@@ -23,49 +24,33 @@ pythonLog.Log("Current CPU Temp: " + str(PiValues.getCPUTemp()))
 
 
 #Read in initial/current values
-TestServoValue = open('servovalue', 'r')
-Value = TestServoValue.read()
+try:
+	servos = [int(line.rstrip('\n')) for line in open('servoValues')]
+except ValueError:
+	pythonLog.Log("Error reading in initial servo values.. Perhaps it's not parsing properly.");
+	program_error = True
 
 #Test servo call
-pythonServoController.testServos()
+#pythonServoController.testServos()
 
 #Write Functions Here
 def outputValues():
-	print "------------------"
-	print "Servo 1: " + Value
-	print "------------------"
-
+	for i in range(0, len(servos)):
+		print ("Servo {0} is set to value: {1}").format(str(i),str(servos[i]))
 	return
 
 def updateValues():
-	global Value
-	if debug == True: print "Current Servo Value: " + str(Value)
-
-	TestServoValue = open('servovalue', 'r')
-	newValue = TestServoValue.read()
-
-	if newValue != Value:
-		if debug == True: print "New servo value set."
-		if debug == True: print "Old Value: " + str(Value) + " - New Value: " + str(newValue)
-		if debug == True: print "Reading in Updated Servo Values: " + newValue
-
-		pythonLog.Log("New servo value set.")
-		pythonLog.Log("Reading in Updated Servo Values: " + newValue)
-		pythonLog.Log("Old Value: " + str(Value) + " - New Value: " + str(newValue))
-
-
-		Value = newValue
-
-		#Send the new value to the servo controller
-		pythonServoController.setSteeringServo(Value)
-
-		TestServoValue.close()
+	try:
+		servos = [int(line.rstrip('\n')) for line in open('servoValues')]
+	except ValueError:
+		pythonLog.Log("Error reading in initial servo values.. Perhaps it's not parsing properly.");
+		program_error = True
 	return
 
 def updatePiValues():
 	#Write this in a JSON format for the webserver
 	try:
-		data = json.loads('{"Temp" : ' + str(PiValues.getCPUTemp()) + ', "ServoValue" : ' + str(Value) + '}')
+		data = json.loads('{"Temp" : ' + str(PiValues.getCPUTemp()) + ', "ServoValue" : ' + str("22") + '}')
 		pythonLog.writePiValues(data)
 		return
 	except ValueError:
@@ -75,7 +60,7 @@ def updatePiValues():
 #Begin Service Loop
 while True:
 	#Clear the screen
-	if debug == True:os.system('clear')
+	if debug == True:os.system('cls')
 
 	#Read in new values
 	updateValues()

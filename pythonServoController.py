@@ -14,12 +14,19 @@ servoMax = 550  # Max pulse length out of 4096
 
 #Values for steering servo
 steeringServoMin = 310;
-steeringServoMax = 650;
+steeringServoMax = 550;
 
 def setSteeringServo(newVal):
     try:
-        pythonLog.Log("Attempting to adjust servo to: " + str(newVal))
-        pwm.setPWM(1, 0, steeringServoMin + int(newVal))
+        #Normalize input with min and max
+        calcNewVal = (steeringServoMax - steeringServoMin)
+        calcNewVal *= float(newVal) / 100
+        calcNewVal += steeringServoMin
+
+        print "Val: " + str(calcNewVal)
+
+        pythonLog.Log("Attempting to adjust servo to: " + str(calcNewVal))
+        pwm.setPWM(1, 0, int(calcNewVal))
     except ValueError:
         pythonLog.Log("#@$^@$##%$")
     return

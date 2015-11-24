@@ -40203,3 +40203,257 @@ s - New Value: 406
 
 2015-11-13 12:59:11.732667 -- Loop Running. (Loop started at: 2015-11-13 12:59:11.732444)
 2015-11-13 12:59:11.747314 -- Current CPU Temp: 36.9
+2015-11-24 19:43:00.687000 -- End Of Log!
+
+
+2015-11-24 19:43:21.489000 -- End Of Log!
+
+
+2015-11-24 19:43:21.498000 -- Loop Running. (Loop started at: 2015-11-24 19:43:21.497000)
+2015-11-24 19:43:21.500000 -- Current CPU Temp: 0
+2015-11-24 19:43:35.921000 -- End Of Log!
+
+
+2015-11-24 19:43:35.930000 -- Loop Running. (Loop started at: 2015-11-24 19:43:35.930000)
+2015-11-24 19:43:35.933000 -- Current CPU Temp: 0
+2015-11-24 19:44:44.530000 -- End Of Log!
+
+
+2015-11-24 19:44:44.539000 -- Loop Running. (Loop started at: 2015-11-24 19:44:44.539000)
+2015-11-24 19:44:44.542000 -- Current CPU Temp: 0
+2015-11-24 19:44:53.345000 -- End Of Log!
+
+
+2015-11-24 19:44:53.353000 -- Loop Running. (Loop started at: 2015-11-24 19:44:53.353000)
+2015-11-24 19:44:53.356000 -- Current CPU Temp: 0
+2015-11-24 19:45:50.738000 -- End Of Log!
+
+
+2015-11-24 19:45:50.747000 -- Loop Running. (Loop started at: 2015-11-24 19:45:50.747000)
+2015-11-24 19:45:50.750000 -- Current CPU Temp: 0
+2015-11-24 19:45:57.105000 -- End Of Log!
+
+
+2015-11-24 19:45:57.113000 -- Loop Running. (Loop started at: 2015-11-24 19:45:57.113000)
+2015-11-24 19:45:57.116000 -- Current CPU Temp: 0
+2015-11-24 19:46:51.122000 -- End Of Log!
+
+
+2015-11-24 19:46:51.130000 -- Loop Running. (Loop started at: 2015-11-24 19:46:51.130000)
+2015-11-24 19:46:51.133000 -- Current CPU Temp: 0
+2015-11-24 19:47:04.706000 -- End Of Log!
+
+
+2015-11-24 19:47:04.714000 -- Loop Running. (Loop started at: 2015-11-24 19:47:04.714000)
+2015-11-24 19:47:04.718000 -- Current CPU Temp: 0
+2015-11-24 19:48:38.176000 -- End Of Log!
+
+
+2015-11-24 19:48:38.184000 -- Loop Running. (Loop started at: 2015-11-24 19:48:38.184000)
+2015-11-24 19:48:38.187000 -- Current CPU Temp: 0
+2015-11-24 19:48:45.282000 -- End Of Log!
+
+
+2015-11-24 19:48:45.290000 -- Loop Running. (Loop started at: 2015-11-24 19:48:45.290000)
+2015-11-24 19:48:45.293000 -- Current CPU Temp: 0
+2015-11-24 19:49:03.265000 -- End Of Log!
+
+
+2015-11-24 19:49:03.273000 -- Loop Running. (Loop started at: 2015-11-24 19:49:03.273000)
+2015-11-24 19:49:03.276000 -- Current CPU Temp: 0
+2015-11-24 19:50:23.217000 -- End Of Log!
+
+
+2015-11-24 19:50:23.226000 -- Loop Running. (Loop started at: 2015-11-24 19:50:23.226000)
+2015-11-24 19:50:23.229000 -- Current CPU Temp: 0
+2015-11-24 19:52:29.059000 -- End Of Log!
+
+
+2015-11-24 19:52:29.067000 -- Loop Running. (Loop started at: 2015-11-24 19:52:29.067000)
+2015-11-24 19:52:29.070000 -- Current CPU Temp: 0
+2015-11-24 19:52:53.412000 -- End Of Log!
+
+
+2015-11-24 19:52:53.420000 -- Loop Running. (Loop started at: 2015-11-24 19:52:53.420000)
+2015-11-24 19:52:53.423000 -- Current CPU Temp: 0
+2015-11-24 19:55:00.673000 -- End Of Log!
+
+
+2015-11-24 19:55:00.682000 -- Loop Running. (Loop started at: 2015-11-24 19:55:00.682000)
+2015-11-24 19:55:00.686000 -- Current CPU Temp: 0
+2015-11-24 19:55:10.721000 -- End Of Log!
+
+
+2015-11-24 19:55:10.729000 -- Loop Running. (Loop started at: 2015-11-24 19:55:10.729000)
+2015-11-24 19:55:10.732000 -- Current CPU Temp: 0
+2015-11-24 19:56:28.417000 -- End Of Log!
+
+
+2015-11-24 19:56:28.425000 -- Loop Running. (Loop started at: 2015-11-24 19:56:28.425000)
+2015-11-24 19:56:28.428000 -- Current CPU Temp: 0
+2015-11-24 19:58:31.744000 -- End Of Log!
+
+
+2015-11-24 19:58:31.752000 -- Loop Running. (Loop started at: 2015-11-24 19:58:31.752000)
+2015-11-24 19:58:31.755000 -- Current CPU Temp: 0
+2015-11-24 19:58:49.282000 -- End Of Log!
+
+
+2015-11-24 19:58:49.291000 -- Loop Running. (Loop started at: 2015-11-24 19:58:49.291000)
+2015-11-24 19:58:49.295000 -- Current CPU Temp: 0
+2015-11-24 19:59:04.929000 -- End Of Log!
+
+
+2015-11-24 19:59:04.937000 -- Loop Running. (Loop started at: 2015-11-24 19:59:04.937000)
+2015-11-24 19:59:04.940000 -- Current CPU Temp: 0
+2015-11-24 20:00:13.745000 -- End Of Log!
+
+
+2015-11-24 20:00:13.753000 -- Loop Running. (Loop started at: 2015-11-24 20:00:13.752000)
+2015-11-24 20:00:13.756000 -- Current CPU Temp: 0
+2015-11-24 20:00:22.897000 -- End Of Log!
+
+
+2015-11-24 20:00:22.905000 -- Loop Running. (Loop started at: 2015-11-24 20:00:22.905000)
+2015-11-24 20:00:22.908000 -- Current CPU Temp: 0
+2015-11-24 20:00:53.776000 -- End Of Log!
+
+
+2015-11-24 20:00:53.784000 -- Loop Running. (Loop started at: 2015-11-24 20:00:53.784000)
+2015-11-24 20:00:53.787000 -- Current CPU Temp: 0
+2015-11-24 20:01:29.617000 -- End Of Log!
+
+
+2015-11-24 20:01:29.626000 -- Loop Running. (Loop started at: 2015-11-24 20:01:29.626000)
+2015-11-24 20:01:29.629000 -- Current CPU Temp: 0
+2015-11-24 20:01:29.655000 -- New servo value set.
+2015-11-24 20:01:29.658000 -- Reading in Updated Servo Values: 404
+
+2015-11-24 20:01:29.661000 -- Old Value: 54 - New Value: 404
+
+2015-11-24 20:03:19.857000 -- End Of Log!
+
+
+2015-11-24 20:03:19.866000 -- Loop Running. (Loop started at: 2015-11-24 20:03:19.865000)
+2015-11-24 20:03:19.869000 -- Current CPU Temp: 0
+2015-11-24 20:03:38.177000 -- End Of Log!
+
+
+2015-11-24 20:03:38.186000 -- Loop Running. (Loop started at: 2015-11-24 20:03:38.185000)
+2015-11-24 20:03:38.189000 -- Current CPU Temp: 0
+2015-11-24 20:03:38.192000 -- Error reading in initial servo values.. Perhaps it's not parsing properly.
+2015-11-24 20:06:02.053000 -- End Of Log!
+
+
+2015-11-24 20:06:02.062000 -- Loop Running. (Loop started at: 2015-11-24 20:06:02.062000)
+2015-11-24 20:06:02.066000 -- Current CPU Temp: 0
+2015-11-24 20:06:02.069000 -- Error reading in initial servo values.. Perhaps it's not parsing properly.
+2015-11-24 20:06:35.351000 -- End Of Log!
+
+
+2015-11-24 20:06:35.359000 -- Loop Running. (Loop started at: 2015-11-24 20:06:35.358000)
+2015-11-24 20:06:35.362000 -- Current CPU Temp: 0
+2015-11-24 20:06:35.364000 -- Error reading in initial servo values.. Perhaps it's not parsing properly.
+2015-11-24 20:06:42.529000 -- End Of Log!
+
+
+2015-11-24 20:06:42.537000 -- Loop Running. (Loop started at: 2015-11-24 20:06:42.537000)
+2015-11-24 20:06:42.540000 -- Current CPU Temp: 0
+2015-11-24 20:06:42.543000 -- Error reading in initial servo values.. Perhaps it's not parsing properly.
+2015-11-24 20:07:15.329000 -- End Of Log!
+
+
+2015-11-24 20:07:15.336000 -- Loop Running. (Loop started at: 2015-11-24 20:07:15.336000)
+2015-11-24 20:07:15.339000 -- Current CPU Temp: 0
+2015-11-24 20:07:15.342000 -- Error reading in initial servo values.. Perhaps it's not parsing properly.
+2015-11-24 20:07:44.017000 -- End Of Log!
+
+
+2015-11-24 20:07:44.026000 -- Loop Running. (Loop started at: 2015-11-24 20:07:44.026000)
+2015-11-24 20:07:44.029000 -- Current CPU Temp: 0
+2015-11-24 20:07:44.032000 -- Error reading in initial servo values.. Perhaps it's not parsing properly.
+2015-11-24 20:08:26.529000 -- End Of Log!
+
+
+2015-11-24 20:08:26.537000 -- Loop Running. (Loop started at: 2015-11-24 20:08:26.537000)
+2015-11-24 20:08:26.540000 -- Current CPU Temp: 0
+2015-11-24 20:08:26.542000 -- Error reading in initial servo values.. Perhaps it's not parsing properly.
+2015-11-24 20:10:02.816000 -- End Of Log!
+
+
+2015-11-24 20:10:02.824000 -- Loop Running. (Loop started at: 2015-11-24 20:10:02.824000)
+2015-11-24 20:10:02.827000 -- Current CPU Temp: 0
+2015-11-24 20:10:02.830000 -- Error reading in initial servo values.. Perhaps it's not parsing properly.
+2015-11-24 20:10:58.192000 -- End Of Log!
+
+
+2015-11-24 20:10:58.200000 -- Loop Running. (Loop started at: 2015-11-24 20:10:58.200000)
+2015-11-24 20:10:58.203000 -- Current CPU Temp: 0
+2015-11-24 20:10:58.206000 -- Error reading in initial servo values.. Perhaps it's not parsing properly.
+2015-11-24 20:11:11.904000 -- End Of Log!
+
+
+2015-11-24 20:11:11.912000 -- Loop Running. (Loop started at: 2015-11-24 20:11:11.912000)
+2015-11-24 20:11:11.915000 -- Current CPU Temp: 0
+2015-11-24 20:11:11.918000 -- Error reading in initial servo values.. Perhaps it's not parsing properly.
+2015-11-24 20:12:07.584000 -- End Of Log!
+
+
+2015-11-24 20:12:07.592000 -- Loop Running. (Loop started at: 2015-11-24 20:12:07.592000)
+2015-11-24 20:12:07.595000 -- Current CPU Temp: 0
+2015-11-24 20:12:07.598000 -- Error reading in initial servo values.. Perhaps it's not parsing properly.
+2015-11-24 20:12:15.427000 -- End Of Log!
+
+
+2015-11-24 20:12:15.436000 -- Loop Running. (Loop started at: 2015-11-24 20:12:15.435000)
+2015-11-24 20:12:15.439000 -- Current CPU Temp: 0
+2015-11-24 20:12:48.241000 -- End Of Log!
+
+
+2015-11-24 20:12:48.250000 -- Loop Running. (Loop started at: 2015-11-24 20:12:48.249000)
+2015-11-24 20:12:48.253000 -- Current CPU Temp: 0
+2015-11-24 20:13:07.424000 -- End Of Log!
+
+
+2015-11-24 20:13:07.432000 -- Loop Running. (Loop started at: 2015-11-24 20:13:07.432000)
+2015-11-24 20:13:07.436000 -- Current CPU Temp: 0
+2015-11-24 20:13:46.786000 -- End Of Log!
+
+
+2015-11-24 20:13:46.795000 -- Loop Running. (Loop started at: 2015-11-24 20:13:46.795000)
+2015-11-24 20:13:46.798000 -- Current CPU Temp: 0
+2015-11-24 20:13:58.596000 -- End Of Log!
+
+
+2015-11-24 20:13:58.605000 -- Loop Running. (Loop started at: 2015-11-24 20:13:58.604000)
+2015-11-24 20:13:58.608000 -- Current CPU Temp: 0
+2015-11-24 20:20:38.067000 -- End Of Log!
+
+
+2015-11-24 20:20:38.076000 -- Loop Running. (Loop started at: 2015-11-24 20:20:38.076000)
+2015-11-24 20:20:38.079000 -- Current CPU Temp: 0
+2015-11-24 20:21:08.709000 -- End Of Log!
+
+
+2015-11-24 20:21:08.718000 -- Loop Running. (Loop started at: 2015-11-24 20:21:08.718000)
+2015-11-24 20:21:08.721000 -- Current CPU Temp: 0
+2015-11-24 20:21:45.889000 -- End Of Log!
+
+
+2015-11-24 20:21:45.897000 -- Loop Running. (Loop started at: 2015-11-24 20:21:45.897000)
+2015-11-24 20:21:45.900000 -- Current CPU Temp: 0
+2015-11-24 20:22:13.954000 -- End Of Log!
+
+
+2015-11-24 20:22:13.963000 -- Loop Running. (Loop started at: 2015-11-24 20:22:13.962000)
+2015-11-24 20:22:13.966000 -- Current CPU Temp: 0
+2015-11-24 20:22:41.425000 -- End Of Log!
+
+
+2015-11-24 20:22:41.433000 -- Loop Running. (Loop started at: 2015-11-24 20:22:41.433000)
+2015-11-24 20:22:41.436000 -- Current CPU Temp: 0
+2015-11-24 20:23:06.498000 -- End Of Log!
+
+
+2015-11-24 20:23:06.506000 -- Loop Running. (Loop started at: 2015-11-24 20:23:06.505000)
+2015-11-24 20:23:06.509000 -- Current CPU Temp: 0

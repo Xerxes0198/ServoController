@@ -5,6 +5,7 @@ var fs = require('fs');
 var readData;
 var inputFileName = 'piValues.txt';
 var servoFileName = 'servovalue';
+var servosFileName = 'servoValues';
 var dataReaderEnabled = true;
 
 function modLog(message)
@@ -46,6 +47,20 @@ this.readInitData = function()
       modLog("Data Reader initialized correctly...");
       modLog("Logging data from piValues read: " + data);
     }
+
+    //Read in the current values of the servos
+
+    //Create an array to hold the data
+    var servoVaulesArray =fs.readFileSync(servosFileName).toString().split("\n");
+
+    //Loop through to confirm read of all values
+    for(i in servoVaulesArray)
+    {
+      console.log(servoVaulesArray[i]);
+    }
+
+    //Convert to JSON for browser
+    var jsonValues = JSON.stringify(servoVaulesArray);
   });
 }
 

@@ -19,7 +19,7 @@ var app = http.createServer(function(request, response)
 	//Read in the HTML Interface
 	fs.readFile("interface/index.html", "utf-8", function(error, data)
 	{
-		modLog("File read:" + data);
+		//modLog("File read:" + data);
 		modLog("Error Reads: " + error)
 
 		if(error == null)
@@ -47,6 +47,18 @@ io.sockets.on('connect', function(socket)
     console.log(dataReader.updateData());
     io.sockets.emit("return_data", readString)
 	});
+
+  //Create a function to request initial values
+  socket.on("request_initial_values", function(data)
+  {
+    //Request received for init values
+    modLog("Request received for init values");
+
+
+    //Read init data and return it to new socket connection.
+    dataReader.readInitData();
+
+  });
 
   socket.on("update_servo_value", function(data)
   {

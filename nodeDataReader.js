@@ -4,9 +4,10 @@ var fs = require('fs');
 
 var readData;
 var inputFileName = 'piValues.txt';
-var servoFileName = 'servovalue';
-var servosFileName = 'servoValues';
 var dataReaderEnabled = true;
+
+//Create servo values
+var FILE_STEERING_SERVO = '/servoValues/steering_servo';
 
 function modLog(message)
 {
@@ -25,6 +26,29 @@ this.writeSteeringValue = function(newVal)
   modLog("Attempting to write given data to FS");
 
   fs.writeFile(servoFileName, newVal);
+}
+
+//Functions to read values
+this.readSteeringValue = function()
+{
+  //Return steering valie from file
+  //Format of <Io:VALUE>
+
+  //Check file exists
+  //  Try
+  //    Read in values and split on ':'
+  //  try converting to JSON as {pin:"<PIN NUMBER>", value:"<Read Value>"}
+  //Return JSON object, or return null!
+}
+
+this.readThrottleValue = function()
+{
+  //Return throttle valie from file
+  //Format of <Io:VALUE>
+
+  //Convert to JSON
+
+  //Return JSON
 }
 
 this.readInitData = function()
@@ -50,17 +74,6 @@ this.readInitData = function()
 
     //Read in the current values of the servos
 
-    //Create an array to hold the data
-    var servoVaulesArray =fs.readFileSync(servosFileName).toString().split("\n");
-
-    //Loop through to confirm read of all values
-    for(i in servoVaulesArray)
-    {
-      console.log(servoVaulesArray[i]);
-    }
-
-    //Convert to JSON for browser
-    var jsonValues = JSON.stringify(servoVaulesArray);
   });
 }
 

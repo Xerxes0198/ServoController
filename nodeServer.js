@@ -60,7 +60,7 @@ io.sockets.on('connect', function(socket)
 
   });
 
-  socket.on("update_servo_value", function(data)
+  socket.on("update_sterring_servo_value", function(data)
   {
     modLog("Updateing steering servo to value: " + data);
 

@@ -24,7 +24,7 @@
 					console.log("Sending steering update: " + sliderControl.value);
 
 					//Send Value
-					socketio.emit("update_servo_value", sliderControl.value );
+					socketio.emit("update_sterring_servo_value", sliderControl.value );
 
 					//Update old slider value
 					oldSliderValue = sliderControl.value;
@@ -45,7 +45,8 @@
 		{
 			//Create the socket
 			//socketio = io.connect("192.168.178.47:13378");
-			socketio = io.connect("127.0.0.1:13378");
+			//socketio = io.connect("127.0.0.1:13378");
+			socketio = io.connect("192.168.178.46:13378");
 
 			//Get some initial values
 			socketio.emit("request_initial_values", function(data)

@@ -1,36 +1,21 @@
 from Adafruit_PWM_Servo_Driver import PWM
 import time
 import pythonLog
+import os
+from pythonServo import Servo
 
 #Debug Stuff
-debug = False
+debug = True;
+
+#Servo file location
+servo_file_path = "servoValues/";
+
+#Array to hold all the servo instances.
+servos = [];
 
 # Initialise the PWM device using the default address
-if debug == False: pwm = PWM(0x40)
-if debug == True: pwm = PWM(0x40, debug=True)
-
-servoMin = 400  # Min pulse length out of 4096
-servoMax = 550  # Max pulse length out of 4096
-
-#Values for steering servo
-steeringServoMin = 310;
-steeringServoMax = 550;
-
-def setSteeringServo(newVal):
-    try:
-        #Normalize input with min and max
-        calcNewVal = (steeringServoMax - steeringServoMin)
-        calcNewVal *= float(newVal) / 100
-        calcNewVal += steeringServoMin
-
-        print "Val: " + str(calcNewVal)
-
-        pythonLog.Log("Attempting to adjust servo to: " + str(calcNewVal))
-        pwm.setPWM(1, 0, int(calcNewVal))
-    except ValueError:
-        pythonLog.Log("#@$^@$##%$")
-    return
-
+if debug == False: pwm = PWM(0x40);
+if debug == True: pwm = PWM(0x40, debug=False);
 
 def setServoPulse(channel, pulse):
   pulseLength = 1000000                   # 1,000,000 us per second
@@ -45,13 +30,17 @@ def setServoPulse(channel, pulse):
 
 pwm.setPWMFreq(60)                        # Set frequency to 60 Hz
 
-def testServos():
-	pwm.setPWM(0, 0, servoMin + 10)
-	time.sleep(.8)
-	pwm.setPWM(0, 0, servoMax)
-	time.sleep(.8)
+#############################################################################
+#Loop through the folder and find all the servos and then create an instance of them
+def getServos():
+    for fileName in os.listdir(servo_file_path):
+        print fileName
 
-	pwm.setPWM(1, 0, steeringServoMax)
-	time.sleep(.8)
-	pwm.setPWM(1, 0, steeringServoMin)
-	time.sleep(.8)
+        #Create a servo instance - Pass it the path
+        newServo = Servo(servo_file_path + fileName);
+
+        #Ask that instance to update itself and apply the values
+
+        #Add the insance of the servo the Servos array
+
+if debug == True: getServos()

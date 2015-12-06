@@ -1,6 +1,6 @@
 //Read in the values from the python server and provite Functions for the node server
-
 var fs = require('fs');
+var fs = require('pythonServo');
 
 var readData;
 var inputFileName = 'piValues.txt';

@@ -21,6 +21,9 @@ if debug == False: print "Loop Running, silent. (Loop started at: " + str(dateti
 pythonLog.Log("Loop Running. (Loop started at: " + str(datetime.datetime.now()) + ")")
 pythonLog.Log("Current CPU Temp: " + str(PiValues.getCPUTemp()))
 
+#Read in all the servos from the folder
+pythonServoController.getServos()
+
 #Test servo call
 pythonServoController.testServos()
 

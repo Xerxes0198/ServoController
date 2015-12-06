@@ -683,13 +683,13 @@
 2015-08-10 06:38:16.879092 -- New servo value set.
 2015-08-10 06:38:16.879390 -- Reading in Updated Servo Values: 406
 2015-08-10 06:38:16.879704 -- Old Value: 406 - New Value: 406
-2015-08-10 06:39:40.544768 -- 
+2015-08-10 06:39:40.544768 --
 
 
 2015-08-10 06:39:40.546454 -- Loop Running. (Loop started at: 2015-08-10 06:39:40.546262)
 2015-08-10 06:39:54.590761 -- New servo value set.
 2015-08-10 06:39:54.591217 -- Reading in Updated Servo Values: 406
-2015-08-10 06:39:54.591591 -- Old Value: 406 - New Value: 
+2015-08-10 06:39:54.591591 -- Old Value: 406 - New Value:
 2015-08-10 06:39:54.592644 -- New servo value set.
 2015-08-10 06:39:54.593132 -- Reading in Updated Servo Values: 406
 2015-08-10 06:39:54.593529 -- Old Value: 406 - New Value: 407
@@ -36349,17 +36349,17 @@
 2015-08-10 06:40:09.355249 -- Reading in Updated Servo Values: 406
 2015-08-10 06:40:09.355548 -- Old Value: 406 - New Value: 407
 2015-08-10 06:40:09.355986 -- New servo value set.
-2015-08-10 06:40:12.208140 -- 
+2015-08-10 06:40:12.208140 --
 
 
 2015-08-10 06:40:12.209585 -- Loop Running. (Loop started at: 2015-08-10 06:40:12.209391)
-2015-08-10 06:40:42.366642 -- 
+2015-08-10 06:40:42.366642 --
 
 
 2015-08-10 06:40:42.368207 -- Loop Running. (Loop started at: 2015-08-10 06:40:42.368004)
 2015-08-10 06:42:05.018443 -- New servo value set.
 2015-08-10 06:42:05.018906 -- Reading in Updated Servo Values: 407
-2015-08-10 06:42:05.019470 -- Old Value: 407 - New Value: 
+2015-08-10 06:42:05.019470 -- Old Value: 407 - New Value:
 2015-08-10 06:42:05.020407 -- New servo value set.
 2015-08-10 06:42:05.020894 -- Reading in Updated Servo Values: 407
 2015-08-10 06:42:05.021282 -- Old Value: 407 - New Value: 406
@@ -39866,39 +39866,39 @@
 2015-08-10 06:42:06.758685 -- Old Value: 407 - New Value: 406
 2015-08-10 06:42:06.759325 -- New servo value set.
 2015-08-10 06:42:06.759614 -- Reading in Updated Servo Values: 407
-2015-08-10 06:42:07.757983 -- 
+2015-08-10 06:42:07.757983 --
 
 
 2015-08-10 06:42:07.759195 -- Loop Running. (Loop started at: 2015-08-10 06:42:07.758986)
-2015-08-10 06:42:35.259289 -- 
+2015-08-10 06:42:35.259289 --
 
 
 2015-08-10 06:42:35.260555 -- Loop Running. (Loop started at: 2015-08-10 06:42:35.260345)
-2015-08-10 06:43:06.874793 -- 
+2015-08-10 06:43:06.874793 --
 
 
 2015-08-10 06:43:06.876090 -- Loop Running. (Loop started at: 2015-08-10 06:43:06.875889)
-2015-08-10 06:48:07.360674 -- 
+2015-08-10 06:48:07.360674 --
 
 
 2015-08-10 06:48:07.361909 -- Loop Running. (Loop started at: 2015-08-10 06:48:07.361702)
 2015-08-10 06:48:11.550802 -- New servo value set.
 2015-08-10 06:48:11.551493 -- Reading in Updated Servo Values: 406
-2015-08-10 06:48:11.552121 -- Old Value: 406 - New Value: 
+2015-08-10 06:48:11.552121 -- Old Value: 406 - New Value:
 2015-08-10 06:48:11.552935 -- New servo value set.
-2015-08-10 06:48:11.553613 -- Reading in Updated Servo Values: 
+2015-08-10 06:48:11.553613 -- Reading in Updated Servo Values:
 2015-08-10 06:48:11.554157 -- Old Value:  - New Value: 407
-2015-08-10 06:49:41.806236 -- 
+2015-08-10 06:49:41.806236 --
 
 
 2015-08-10 06:49:41.807426 -- Loop Running. (Loop started at: 2015-08-10 06:49:41.807199)
 2015-08-10 06:49:45.067795 -- New servo value set.
-2015-08-10 06:49:45.068264 -- Reading in Updated Servo Values: 
-2015-08-10 06:49:45.068645 -- Old Value: 407 - New Value: 
+2015-08-10 06:49:45.068264 -- Reading in Updated Servo Values:
+2015-08-10 06:49:45.068645 -- Old Value: 407 - New Value:
 2015-08-10 06:49:45.069251 -- New servo value set.
 2015-08-10 06:49:45.069713 -- Reading in Updated Servo Values: 406
 2015-08-10 06:49:45.070219 -- Old Value:  - New Value: 406
-2015-08-10 06:50:32.892205 -- 
+2015-08-10 06:50:32.892205 --
 
 
 2015-08-10 06:50:32.893729 -- Loop Running. (Loop started at: 2015-08-10 06:50:32.893485)
@@ -39917,49 +39917,49 @@
 2015-08-10 06:52:52.975176 -- New servo value set.
 2015-08-10 06:52:52.975762 -- Reading in Updated Servo Values: 450
 2015-08-10 06:52:52.976155 -- Old Value: 406 - New Value: 450
-2015-08-10 06:53:17.286885 -- 
+2015-08-10 06:53:17.286885 --
 
 
 2015-08-10 06:53:17.288816 -- Loop Running. (Loop started at: 2015-08-10 06:53:17.288617)
 2015-08-10 06:53:21.525053 -- New servo value set.
-2015-08-10 06:53:21.526148 -- Reading in Updated Servo Values: 
-2015-08-10 06:53:21.527198 -- Old Value: 450 - New Value: 
+2015-08-10 06:53:21.526148 -- Reading in Updated Servo Values:
+2015-08-10 06:53:21.527198 -- Old Value: 450 - New Value:
 2015-08-10 06:53:21.528575 -- New servo value set.
 2015-08-10 06:53:21.529642 -- Reading in Updated Servo Values: 400
 2015-08-10 06:53:21.530623 -- Old Value:  - New Value: 400
-2015-08-10 06:56:23.616344 -- 
+2015-08-10 06:56:23.616344 --
 
 
 2015-08-10 06:56:23.618223 -- Loop Running. (Loop started at: 2015-08-10 06:56:23.618022)
 2015-08-10 06:56:37.918541 -- New servo value set.
-2015-08-10 06:56:37.919607 -- Reading in Updated Servo Values: 
-2015-08-10 06:56:37.920632 -- Old Value: 400 - New Value: 
+2015-08-10 06:56:37.919607 -- Reading in Updated Servo Values:
+2015-08-10 06:56:37.920632 -- Old Value: 400 - New Value:
 2015-08-10 06:56:37.921886 -- New servo value set.
 2015-08-10 06:56:37.922935 -- Reading in Updated Servo Values: 401
 2015-08-10 06:56:37.923961 -- Old Value:  - New Value: 401
 2015-08-10 06:59:20.041674 -- New servo value set.
-2015-08-10 06:59:20.042751 -- Reading in Updated Servo Values: 
-2015-08-10 06:59:20.043668 -- Old Value: 401 - New Value: 
+2015-08-10 06:59:20.042751 -- Reading in Updated Servo Values:
+2015-08-10 06:59:20.043668 -- Old Value: 401 - New Value:
 2015-08-10 06:59:20.044718 -- New servo value set.
 2015-08-10 06:59:20.045643 -- Reading in Updated Servo Values: 402
 2015-08-10 06:59:20.046563 -- Old Value:  - New Value: 402
-2015-08-10 06:59:27.579757 -- 
+2015-08-10 06:59:27.579757 --
 
 
 2015-08-10 06:59:27.581454 -- Loop Running. (Loop started at: 2015-08-10 06:59:27.581257)
 2015-08-10 06:59:32.185748 -- New servo value set.
-2015-08-10 06:59:32.186838 -- Reading in Updated Servo Values: 
-2015-08-10 06:59:32.187652 -- Old Value: 402 - New Value: 
+2015-08-10 06:59:32.186838 -- Reading in Updated Servo Values:
+2015-08-10 06:59:32.187652 -- Old Value: 402 - New Value:
 2015-08-10 06:59:32.188365 -- New servo value set.
 2015-08-10 06:59:32.188784 -- Reading in Updated Servo Values: 401
 2015-08-10 06:59:32.189141 -- Old Value:  - New Value: 401
-2015-08-10 07:00:32.888801 -- 
+2015-08-10 07:00:32.888801 --
 
 
 2015-08-10 07:00:32.889859 -- Loop Running. (Loop started at: 2015-08-10 07:00:32.889639)
 2015-08-10 07:00:37.590881 -- New servo value set.
-2015-08-10 07:00:37.591325 -- Reading in Updated Servo Values: 
-2015-08-10 07:00:37.591674 -- Old Value: 401 - New Value: 
+2015-08-10 07:00:37.591325 -- Reading in Updated Servo Values:
+2015-08-10 07:00:37.591674 -- Old Value: 401 - New Value:
 2015-08-10 07:00:37.592709 -- New servo value set.
 2015-08-10 07:00:37.593066 -- Reading in Updated Servo Values: 402
 2015-08-10 07:00:37.593418 -- Old Value:  - New Value: 402
@@ -39972,8 +39972,8 @@
 
 2015-08-10 07:03:20.054777 -- Loop Running. (Loop started at: 2015-08-10 07:03:20.054543)
 2015-08-10 07:03:27.201636 -- New servo value set.
-2015-08-10 07:03:27.202113 -- Reading in Updated Servo Values: 
-2015-08-10 07:03:27.202504 -- Old Value: 402 - New Value: 
+2015-08-10 07:03:27.202113 -- Reading in Updated Servo Values:
+2015-08-10 07:03:27.202504 -- Old Value: 402 - New Value:
 2015-08-10 07:03:27.203115 -- New servo value set.
 2015-08-10 07:03:27.203567 -- Reading in Updated Servo Values: 403
 2015-08-10 07:03:27.204057 -- Old Value:  - New Value: 403
@@ -40024,8 +40024,8 @@
 
 2015-08-10 07:08:13.628015 -- Loop Running. (Loop started at: 2015-08-10 07:08:13.627793)
 2015-08-10 07:08:19.352481 -- New servo value set.
-2015-08-10 07:08:19.352950 -- Reading in Updated Servo Values: 
-2015-08-10 07:08:19.353240 -- Old Value: 400 - New Value: 
+2015-08-10 07:08:19.352950 -- Reading in Updated Servo Values:
+2015-08-10 07:08:19.353240 -- Old Value: 400 - New Value:
 2015-08-10 07:08:19.454062 -- New servo value set.
 2015-08-10 07:08:19.454612 -- Reading in Updated Servo Values: 4002
 2015-08-10 07:08:19.454988 -- Old Value:  - New Value: 4002
@@ -40088,8 +40088,8 @@ s - New Value: 406
 
 2015-08-10 07:11:30.709731 -- Loop Running. (Loop started at: 2015-08-10 07:11:30.709508)
 2015-08-10 07:11:33.490296 -- New servo value set.
-2015-08-10 07:11:33.493020 -- Reading in Updated Servo Values: 
-2015-08-10 07:11:33.493488 -- Old Value: 403 - New Value: 
+2015-08-10 07:11:33.493020 -- Reading in Updated Servo Values:
+2015-08-10 07:11:33.493488 -- Old Value: 403 - New Value:
 2015-08-10 07:11:33.494118 -- New servo value set.
 2015-08-10 07:11:33.494520 -- Reading in Updated Servo Values: 404
 2015-08-10 07:11:33.494945 -- Old Value:  - New Value: 404
@@ -40502,3 +40502,4 @@ s - New Value: 406
 
 2015-11-25 18:46:43.871000 -- Loop Running. (Loop started at: 2015-11-25 18:46:43.871000)
 2015-11-25 18:46:43.874000 -- Current CPU Temp: 0
+2015-12-05 09:01:25.481000 -- End Of Log!

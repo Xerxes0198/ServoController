@@ -3,7 +3,7 @@ import os
 import time
 import datetime
 import pythonLog
-import PiValues
+import piValues
 import json
 import pythonServoController
 
@@ -19,33 +19,28 @@ global servos
 print "Hello, World!..."
 if debug == False: print "Loop Running, silent. (Loop started at: " + str(datetime.datetime.now()) + ")"
 pythonLog.Log("Loop Running. (Loop started at: " + str(datetime.datetime.now()) + ")")
-pythonLog.Log("Current CPU Temp: " + str(PiValues.getCPUTemp()))
+pythonLog.Log("Current CPU Temp: " + str(piValues.getCPUTemp()))
 
 #Read in all the servos from the folder
 pythonServoController.getServos()
 
 #Test servo call
-pythonServoController.testServos()
+#pythonServoController.testServos()
 
 #Write Functions Here
 def outputValues():
-	for i in range(0, len(servos)):
-		print ("Servo {0} is set to value: {1}").format(str(i),str(servos[i]))
+	print "Write code to update servo values here"
 	return
 
 def updateValues():
-	global servos
-	try:
-		servos = [int(line.rstrip('\n')) for line in open('servoValues')]
-	except ValueError:
-		pythonLog.Log("Error reading in initial servo values.. Perhaps it's not parsing properly.");
+	print "Write code to update servo values here"
 	return
 
 def updatePiValues():
 	#Write this in a JSON format for the webserver
 	try:
-		data = json.loads('{"Temp" : ' + str(PiValues.getCPUTemp()) + ', "ServoValue" : ' + str("22") + '}')
-		pythonLog.writePiValues(data)
+		data = json.loads('{"Temp" : ' + str(piValues.getCPUTemp()) + ', "ServoValue" : ' + str("22") + '}')
+		#pythonLog.writePiValues(data)
 		return
 	except ValueError:
 		pythonLog.Log("Error parsing JSON data, possible write not finised.")
@@ -54,7 +49,7 @@ def updatePiValues():
 #Begin Service Loop
 while True:
 	#Clear the screen
-	if debug == True:os.system('clear')
+	#if debug == True:os.system('clear')
 
 	#Read in new values
 	updateValues()

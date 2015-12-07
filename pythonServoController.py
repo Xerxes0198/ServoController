@@ -34,13 +34,9 @@ pwm.setPWMFreq(60)                        # Set frequency to 60 Hz
 #Loop through the folder and find all the servos and then create an instance of them
 def getServos():
     for fileName in os.listdir(servo_file_path):
-        print fileName
-
         #Create a servo instance - Pass it the path
         newServo = Servo(servo_file_path + fileName);
 
         #Ask that instance to update itself and apply the values
 
         #Add the insance of the servo the Servos array
-
-if debug == True: getServos()

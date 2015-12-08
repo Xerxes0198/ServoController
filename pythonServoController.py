@@ -5,7 +5,7 @@ import os
 from pythonServo import Servo
 
 #Debug Stuff
-debug = True;
+debug = False;
 
 #Servo file location
 servo_file_path = "servoValues/";
@@ -15,7 +15,7 @@ servos = [];
 
 # Initialise the PWM device using the default address
 if debug == False: pwm = PWM(0x40);
-if debug == True: pwm = PWM(0x40, debug=False);
+if debug == True: pwm = PWM(0x40, debug=True);
 
 def setServoPulse(channel, pulse):
   pulseLength = 1000000                   # 1,000,000 us per second
@@ -37,6 +37,16 @@ def getServos():
         #Create a servo instance - Pass it the path
         newServo = Servo(servo_file_path + fileName);
 
-        #Ask that instance to update itself and apply the values
-
         #Add the insance of the servo the Servos array
+        servos.append(newServo);
+    print "Found {0} servo{1}".format(str(len(servos)), 's' if len(servos) > 1 else '');
+
+#Apply updated servos values
+def updateServos():
+    for servo in servos:
+        servo.updateFromFile();
+
+#Output all servo details
+def outputServoValues():
+    for servo in servos:
+        servo.outputValues();

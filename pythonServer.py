@@ -29,11 +29,11 @@ pythonServoController.getServos()
 
 #Write Functions Here
 def outputValues():
-	print "Write code to update servo values here"
+	pythonServoController.outputServoValues();
 	return
 
 def updateValues():
-	print "Write code to update servo values here"
+	pythonServoController.updateServos();
 	return
 
 def updatePiValues():
@@ -49,7 +49,7 @@ def updatePiValues():
 #Begin Service Loop
 while True:
 	#Clear the screen
-	#if debug == True:os.system('clear')
+	if debug == True:os.system('clear')
 
 	#Read in new values
 	updateValues()

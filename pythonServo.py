@@ -11,24 +11,35 @@ class Servo:
 
     #Function to update the values from the File
     def updateFromFile(self):
-        print "Updating from file"
 
         #open the file and do the magic
-        with open(SERVO_FILE_PATH, 'r') as file:
+        with open(self.SERVO_FILE_PATH, 'r') as file:
             values = file.read().split(':');
 
-        servo_pin       = values[0];
-        servo_min       = values[1];
-        servo_max       = values[2];
-        servo_current   = values[3];
+        self.servo_pin       = values[0];
+        self.servo_min       = values[1];
+        self.servo_max       = values[2];
+        self.servo_current   = values[3];
+
+    #Get the current values
+    def getCurrentValue():
+        return servo_current;
+
+    #Output all values
+    def outputValues(self):
+        print "-------------------------";
+        print "Servo: " + self.SERVO_FILE_PATH;
+        print "Pin: : " + str(self.servo_pin);
+        print "Min: : " + str(self.servo_min);
+        print "Max: : " + str(self.servo_max);
+        print "Current: : " + str(int(self.servo_current));
+        print "-------------------------";
 
 
 
     #Constructor method!
     def __init__(self, inFilePath):
-        print "A new servo has spawned: " + inFilePath;
-        global SERVO_FILE_PATH;
-        SERVO_FILE_PATH = inFilePath;
+        self.SERVO_FILE_PATH = inFilePath;
 
         #update for the first time and set values
         self.updateFromFile();

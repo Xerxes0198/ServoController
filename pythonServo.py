@@ -23,7 +23,12 @@ class Servo:
 
     #Get the current values
     def getCurrentValue():
-        return servo_current;
+        return int(self.servo_current);
+
+    #Get the current pin
+    def getPin():
+        return int(self.servo_pin);
+
 
     #Output all values
     def outputValues(self):

@@ -2,23 +2,14 @@
 var fs = require('fs');
 var fs = require('pythonServo');
 
-var readData;
-var inputFileName = 'piValues.txt';
-var dataReaderEnabled = true;
-
 //Create servo values
 var SERVO_FOLDER = 'servoValues/';
+
+var servos = [];
 
 function modLog(message)
 {
   console.log("DATA READER MODULE: " + message)
-}
-
-this.updateData = function()
-{
-  returnData = null;
-  returnData = fs.readFileSync(inputFileName);
-  return returnData;
 }
 
 this.writeSteeringValue = function(newVal)
@@ -31,6 +22,7 @@ this.writeSteeringValue = function(newVal)
 //Read all servo values and create a servo object
 this.readInitData = function()
 {
+  //Read all files
   files = fs.readdirSync(SERVO_FOLDER).forEach(function(file)
   {
     modLog(fs.readFileSync(SERVO_FOLDER + file.replace('\n', '')));

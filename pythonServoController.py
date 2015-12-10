@@ -36,7 +36,6 @@ def getServos():
     for fileName in os.listdir(servo_file_path):
         #Create a servo instance - Pass it the path
         newServo = Servo(servo_file_path + fileName);
-
         #Add the insance of the servo the Servos array
         servos.append(newServo);
     print "Found {0} servo{1}".format(str(len(servos)), 's' if len(servos) > 1 else '');

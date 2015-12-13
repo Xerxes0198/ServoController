@@ -1,6 +1,6 @@
 var http = require('http');
 var fs = require('fs');
-var dataReader = require('./nodeDataReader.js');
+var dataReader = require('./nodeServoController.js');
 
 //Connection settings
 var port = 13378;

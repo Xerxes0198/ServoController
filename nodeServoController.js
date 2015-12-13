@@ -1,6 +1,6 @@
 //Read in the values from the python server and provite Functions for the node server
 var fs = require('fs');
-var fs = require('pythonServo');
+var nodeServo = require('./nodeServo.js');
 
 //Create servo values
 var SERVO_FOLDER = 'servoValues/';
@@ -23,10 +23,12 @@ this.writeSteeringValue = function(newVal)
 this.readInitData = function()
 {
   //Read all files
-  files = fs.readdirSync(SERVO_FOLDER).forEach(function(file)
+  files = fs.readdirSync(SERVO_FOLDER);
+  for(file in files)
   {
-    modLog(fs.readFileSync(SERVO_FOLDER + file.replace('\n', '')));
-  });
+    //Create a new servo for each file found
+    servos.push(new nodeServo(SERVO_FOLDER + files[file]));
+  }
 }
 
 modLog("Node Data Reader instantiated...");

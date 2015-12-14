@@ -16,10 +16,11 @@ module.exports = function nodeServo(inFilePath)
   this.updateFromFile = function()
   {
     //Read in the file
-
-    //Split the file on colons
-
-    //write values to local vaules
+    var values = String(fs.readFileSync(FILE_PATH)).split(":");
+    this.servo_pin       = values[0];
+    this.servo_min       = values[1];
+    this.servo_max       = values[2];
+    this.servo_current   = values[3];
   }
 
   this.writeNewValue = function()

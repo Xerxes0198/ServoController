@@ -12,13 +12,6 @@ function modLog(message)
   console.log("DATA READER MODULE: " + message)
 }
 
-this.writeSteeringValue = function(newVal)
-{
-  modLog("Attempting to write given data to FS");
-
-  fs.writeFile(servoFileName, newVal);
-}
-
 //Read all servo values and create a servo object
 this.readInitData = function()
 {

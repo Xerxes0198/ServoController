@@ -23,9 +23,41 @@ module.exports = function nodeServo(inFilePath)
     this.servo_current   = values[3];
   }
 
-  this.writeNewValue = function()
+  //Output all data to console
+  this.logToConsole = function()
+  {
+    console.log("servo_pin: "     + String(this.servo_pin));
+    console.log("servo_min: "     + String(this.servo_min));
+    console.log("servo_max: "     + String(this.servo_max));
+    console.log("servo_current: " + String(this.servo_current));
+
+  }
+
+  //Update the value of this servo
+  this.updateValue = function(newVal)
+  {
+    try
+    {
+      var v = parseInt(newVal);
+      console.log("New input value: " + String(v));
+      var calc = parseFloat(this.servo_max - this.servo_min);
+      calc = calc * (v / 100);
+      calc = parseFloat(calc) + parseFloat(this.servo_min);
+      this.servo_current = calc;
+      this.logToConsole();
+    }
+    catch (e)
+    {
+      console.log("Updating new servo value failed");
+      console.log(e);
+    }
+  }
+
+  this.writeNewValue = function(newVal)
   {
     //Write the new values to the file in the same order they were read... Just do this manually.
+
+
   }
 
   /////////////////////////////////////////////

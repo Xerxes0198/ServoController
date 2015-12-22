@@ -1,4 +1,5 @@
 var fs = require('fs');
+var util = require('util');
 
 //Define the servo class for JS
 module.exports = function nodeServo(inFilePath)
@@ -30,7 +31,6 @@ module.exports = function nodeServo(inFilePath)
     console.log("servo_min: "     + String(this.servo_min));
     console.log("servo_max: "     + String(this.servo_max));
     console.log("servo_current: " + String(this.servo_current));
-
   }
 
   //Update the value of this servo
@@ -45,6 +45,8 @@ module.exports = function nodeServo(inFilePath)
       calc = parseFloat(calc) + parseFloat(this.servo_min);
       this.servo_current = calc;
       this.logToConsole();
+
+      this.writeNewValue(calc);
     }
     catch (e)
     {
@@ -56,8 +58,18 @@ module.exports = function nodeServo(inFilePath)
   this.writeNewValue = function(newVal)
   {
     //Write the new values to the file in the same order they were read... Just do this manually.
+    fs.writeFile(FILE_PATH, util.format('%s:%s:%s:%s',
+                              this.servo_pin,
+                              this.servo_min,
+                              this.servo_max,
+                              this.servo_current),
+                              function(err)
+    {
+      console.log("Error writing: " + err);
+    });
 
-
+    //Formatted string test
+    console.log(util.format('Teset %s', 'Here is S'));
   }
 
   /////////////////////////////////////////////

@@ -22,9 +22,6 @@ this.readInitData = function()
     //Create a new servo for each file found
     servos.push(new nodeServo(SERVO_FOLDER + files[file]));
   }
-
-  //test write new value
-  servos[0].updateValue(0);
 }
 
 modLog("Node Data Reader instantiated...");

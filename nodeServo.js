@@ -55,6 +55,12 @@ module.exports = function nodeServo(inFilePath)
     }
   }
 
+  //Function to return servo's name for rough ID
+  this.getName = function()
+  {
+    return String(FILE_PATH).split("/")[1];
+  }
+
   this.writeNewValue = function(newVal)
   {
     //Write the new values to the file in the same order they were read... Just do this manually.

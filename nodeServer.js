@@ -43,9 +43,9 @@ io.sockets.on('connect', function(socket)
 	socket.on("btn_pressed", function(data)
 	{
 		modLog("Button pressed: " + data["DummyData"]);
-    var readString = dataReader.updateData();
-    console.log(dataReader.updateData());
-    io.sockets.emit("return_data", readString)
+    //var readString = dataReader.updateData();
+    //console.log(dataReader.updateData());
+    //io.sockets.emit("return_data", readString)
 	});
 
   //Create a function to request initial values
@@ -70,7 +70,6 @@ io.sockets.on('connect', function(socket)
       if(newVal <= 100 && newVal > 0)
       {
         //Write this value to the FS
-        dataReader.writeSteeringValue(newVal);
       }
       else
       {

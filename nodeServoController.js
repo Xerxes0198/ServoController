@@ -33,11 +33,29 @@ this.getServo = function(inStringName)
 
   if(retVal == null)
   {
-    console.log("A servo search was done but no servo was found: " + inStringName);
+    return null;
   }
   else
   {
     return retVal;
+  }
+}
+
+//Function to update a requested server if it exists
+this.updateServo = function(inServoName, inNewValue)
+{
+  //Check to see if the servo exists and pass it the new value
+  //Value will always be in a range of 0 to 100, the limits
+  //of th ephysical servo are managed in the servo class.
+  servoNum = this.getServo(inServoName);
+
+  if(servoNum == null)
+  {
+    console.log("A servo search was done but no servo was found: " + inServoName);
+  }
+  else
+  {
+    servos[servoNum].updateValue(inNewValue);
   }
 }
 

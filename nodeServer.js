@@ -1,6 +1,6 @@
 var http = require('http');
 var fs = require('fs');
-var dataReader = require('./nodeServoController.js');
+var servoController = require('./nodeServoController.js');
 
 //Connection settings
 var port = 13378;
@@ -60,21 +60,23 @@ io.sockets.on('connect', function(socket)
 
   });
 
-  socket.on("update_sterring_servo_value", function(data)
+  socket.on("update_steering_servo_value", function(data)
   {
-    modLog("Updateing steering servo to value: " + data);
-
     var newVal = parseInt(data);
     if(Number.isInteger(newVal))
     {
       if(newVal <= 100 && newVal > 0)
       {
+        modLog("Updateing steering servo to value: " + data);
+
         //Write this value to the FS
+        //FIX Harcoding of servo name is probably not best..
+        servoController.updateServo("steering_servo", data);
       }
       else
       {
         //An invalid value has been passed through the socket connection...
-        modLog("A bad value was passed to the server!!!!1111oneone");
+        modLog("A bad value was passed to the server! Ignore input.");
 
         //Destroy connection??
       }

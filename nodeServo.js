@@ -71,11 +71,11 @@ module.exports = function nodeServo(inFilePath)
                               this.servo_current),
                               function(err)
     {
-      console.log("Error writing: " + err);
+      if(err != null)
+      {
+        console.log("Error writing: " + err);
+      }
     });
-
-    //Formatted string test
-    console.log(util.format('Teset %s', 'Here is S'));
   }
 
   /////////////////////////////////////////////

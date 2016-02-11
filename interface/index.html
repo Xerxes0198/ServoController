@@ -24,7 +24,7 @@
 					console.log("Sending steering update: " + sliderControl.value);
 
 					//Send Value
-					socketio.emit("update_sterring_servo_value", sliderControl.value );
+					socketio.emit("update_steering_servo_value", sliderControl.value );
 
 					//Update old slider value
 					oldSliderValue = sliderControl.value;

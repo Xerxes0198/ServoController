@@ -54,9 +54,8 @@ io.sockets.on('connect', function(socket)
     //Request received for init values
     modLog("Request received for init values");
 
-
     //Read init data and return it to new socket connection.
-    dataReader.readInitData();
+    servoController.readInitData();
 
   });
 

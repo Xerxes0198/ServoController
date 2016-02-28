@@ -2,11 +2,19 @@
 <html>
 	<head>
 		<script src="/socket.io/socket.io.js"></script>
+		<script src="https://code.jquery.com/jquery-2.2.1.min.js"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
 		<script>
 		var socketio;
 
 		var mouseDownCurrently = false;
 		var sliderControl, oldSliderValue;
+
+
 
 		function mouseDownToggle()
 		{
@@ -67,6 +75,11 @@
 			san = "Test";
 			console.log(san);
 			console.log(sliderControl.value);
+
+			var slider = new Slider("#throttleSlider",
+			{
+				reversed : true
+			});
 		}
 		</script>
 	</head>
@@ -81,6 +94,9 @@
 
 		<div id="controls" width="800">
 			<input type="range" id="steeringSlider" min="0" max="100" onmousedown="mouseDownToggle()" onmouseup="mouseDownToggle()">
+
+
+			<input id="throttleSlider" type="text" data-slider-min="-5" data-slider-max="20" data-slider-step="1" data-slider-value="-3" data-slider-orientation="vertical"/>
 
 		</div>
 	</body>

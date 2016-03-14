@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="https://code.jquery.com/jquery-2.2.1.min.js"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+		<script>
+		var socketio;
+
+		var mouseDownCurrently = false;
+		var sliderControl, oldSliderValue;
+
+
+
+		function mouseDownToggle()
+		{
+			mouseDownCurrently = !mouseDownCurrently;
+			sendMouseUpdates();
+		}
+
+		function sendMouseUpdates()
+		{
+			if(mouseDownCurrently == true)
+			{
+				//Only hassle the socket connection if there is a change in value!
+				if(sliderControl.value != oldSliderValue)
+				{
+					console.log("Sending steering update: " + sliderControl.value);
+
+					//Send Value
+					socketio.emit("update_steering_servo_value", sliderControl.value );
+
+					//Update old slider value
+					oldSliderValue = sliderControl.value;
+				}
+				setTimeout(sendMouseUpdates, 10, 1)
+			}
+		}
+
+		function btnPressed()
+		{
+			console.log("Sending request to socket!");
+			var sendData = document.getElementById("textBox").value;
+			console.log("Value in text box to send: " + sendData);
+			socketio.emit("btn_pressed", {DummyData : sendData});
+		}
+
+		window.onload = function()
+		{
+			//Create the socket
+			//socketio = io.connect("192.168.178.47:13378");
+			//socketio = io.connect("127.0.0.1:13378");
+			socketio = io.connect("192.168.178.47:13378");
+
+			//Get some initial values
+			socketio.emit("request_initial_values", function(data)
+			{
+				//Get the return data as JSON and set the
+
+			});
+
+			socketio.on("return_data", function(data)
+			{
+				console.log("Server said: " + data["ServoValue"]);
+				console.log("Server said: " + data["Temp"]);
+				console.log("Server said: " + data);
+			});
+
+			//Mouse functions for the servo controller
+			sliderControl =	document.getElementById("steeringSlider");
+			san = "Test";
+			console.log(san);
+			console.log(sliderControl.value);
+
+			var slider = new Slider("#throttleSlider",
+			{
+				reversed : true
+			});
+		}
+		</script>
+	</head>
+
+	<body>
+		<input id="textBox"> </input>
+		<button id="testBtn" onClick="btnPressed()">Click Me</button>
+
+		<div align="right">
+
+		</div>
+
+		<div id="controls" width="800">
+			<input type="range" id="steeringSlider" min="0" max="100" onmousedown="mouseDownToggle()" onmouseup="mouseDownToggle()">
+
+
+			<input id="throttleSlider" type="text" data-slider-min="-5" data-slider-max="20" data-slider-step="1" data-slider-value="-3" data-slider-orientation="vertical"/>
+
+		</div>
+	</body>
+</html>

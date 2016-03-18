@@ -1,8 +1,10 @@
 var http = require('http');
+var express = require('express');
 var fs = require('fs');
 var servoController = require('./nodeServoController.js');
 
 //Connection settings
+var expressPort = 8080;
 var port = 13378;
 
 //Global log funciton for thie module
@@ -11,24 +13,34 @@ function modLog(message)
   console.log("NODE SERVER MODULE: " + message)
 }
 
+
+//Setup express server to manage http requests and website functionality
+var expressApp = express();
+expressApp.use(express.static('interface'));
+expressApp.get('/', function(request, response)
+{
+  //Read in the HTML Interface
+  fs.readFile("interface/index.html", "utf-8", function(error, data)
+  {
+    //modLog("File read:" + data);
+    modLog("Error Reads: " + error)
+
+    if(error == null)
+    {
+      response.writeHead(200, {'Content-Type' : 'text/html'})
+      response.write(data);
+      response.end();
+    }
+	});
+});
+expressApp.listen(expressPort);
+
 var app = http.createServer(function(request, response)
 {
 	//Report hit
 	modLog("Request receive");
 
-	//Read in the HTML Interface
-	fs.readFile("interface/index.html", "utf-8", function(error, data)
-	{
-		//modLog("File read:" + data);
-		modLog("Error Reads: " + error)
 
-		if(error == null)
-		{
-			response.writeHead(200, {'Content-Type' : 'text/html'})
-			response.write(data);
-			response.end();
-		}
-	});
 
 }).listen(port);
 

@@ -39,9 +39,6 @@ var app = http.createServer(function(request, response)
 {
 	//Report hit
 	modLog("Request receive");
-
-
-
 }).listen(port);
 
 //Attempt to read in the initial values from the python server
@@ -68,7 +65,15 @@ io.sockets.on('connect', function(socket)
 
     //Read init data and return it to new socket connection.
     servoController.readInitData();
+  });
 
+
+  socket.on("test_socket", function()
+  {
+    socket.emit("test_return", function()
+    {
+
+    });
   });
 
   socket.on("update_steering_servo_value", function(data)

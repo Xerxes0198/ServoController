@@ -9,6 +9,10 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/toastr.min.css" rel="stylesheet"/>
+
+    <!--Load the socket JS stuff as soon as possible -->
+    <script src="http://192.168.178.47:13378/socket.io/socket.io.js"></script>
   </head>
 
   <body>
@@ -49,6 +53,7 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/site.js"></script>
+    <script src="js/toastr.min.js"></script>
   </body>
 
   <!-- Modal -->
@@ -75,10 +80,10 @@
           </ul>
         </div>
         <div class="modal-footer">
+          <button type="button" class="btn btn-info" onClick="testSocket()">Test Socket</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
-
     </div>
   </div>
 </html>

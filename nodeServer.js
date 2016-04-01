@@ -13,7 +13,6 @@ function modLog(message)
   console.log("NODE SERVER MODULE: " + message)
 }
 
-
 //Setup express server to manage http requests and website functionality
 var expressApp = express();
 expressApp.use(express.static('interface'));

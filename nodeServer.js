@@ -1,10 +1,12 @@
-var http = require('http');
-var express = require('express');
+var app = require('express')();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+
 var fs = require('fs');
+
 var servoController = require('./nodeServoController.js');
 
 //Connection settings
-var expressPort = 8080;
 var port = 13378;
 
 //Global log funciton for thie module
@@ -14,9 +16,9 @@ function modLog(message)
 }
 
 //Setup express server to manage http requests and website functionality
-var expressApp = express();
-expressApp.use(express.static('interface'));
-expressApp.get('/', function(request, response)
+app.use(express.static('interface'));
+
+app.get('/', function(request, response)
 {
   //Read in the HTML Interface
   fs.readFile("interface/index.html", "utf-8", function(error, data)
@@ -32,20 +34,17 @@ expressApp.get('/', function(request, response)
     }
 	});
 });
-expressApp.listen(expressPort);
 
-var app = http.createServer(function(request, response)
+http.listen(port,function(request, response)
 {
 	//Report hit
 	modLog("Request receive");
-}).listen(port);
+});
 
 //Attempt to read in the initial values from the python server
 //dataReader.updateData();
 
 //Setup socket server side
-var io = require('socket.io').listen(app);
-
 io.sockets.on('connect', function(socket)
 {
 	socket.on("btn_pressed", function(data)

@@ -25,6 +25,7 @@ $(document).ready(function()
   };
 
   //Attempt to start socket connection
+  /*
   try
   {
     //Use jQuery to load in the script from a dymanically generated location    <!--Load the socket JS stuff as soon as possible -->
@@ -46,7 +47,7 @@ $(document).ready(function()
       console.log("Server said: " + data["ServoValue"]);
       console.log("Server said: " + data["Temp"]);
       console.log("Server said: " + data);
-    });*/
+    });
   }
   catch (e)
   {
@@ -55,7 +56,7 @@ $(document).ready(function()
   finally
   {
 
-  }
+  }*/
 });
 
 function testSocket()

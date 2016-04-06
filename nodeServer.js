@@ -16,7 +16,7 @@ function modLog(message)
 }
 
 //Setup express server to manage http requests and website functionality
-app.use(express.static('interface'));
+//app.use(express.static('interface'));
 
 app.get('/', function(request, response)
 {

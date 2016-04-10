@@ -1,13 +1,13 @@
 var app = require('express')();
+var express = require('express');
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
-
 var fs = require('fs');
-
 var servoController = require('./nodeServoController.js');
 
 //Connection settings
 var port = 13378;
+var currentConnections = 0;
 
 //Global log funciton for thie module
 function modLog(message)
@@ -16,7 +16,7 @@ function modLog(message)
 }
 
 //Setup express server to manage http requests and website functionality
-//app.use(express.static('interface'));
+app.use(express.static('interface'));
 
 app.get('/', function(request, response)
 {
@@ -47,6 +47,10 @@ http.listen(port,function(request, response)
 //Setup socket server side
 io.sockets.on('connect', function(socket)
 {
+    currentConnections = currentConnections + 1;
+    
+    modLog("Socket connected with id of: " + socket.id);
+    
 	socket.on("btn_pressed", function(data)
 	{
 		modLog("Button pressed: " + data["DummyData"]);
@@ -68,10 +72,19 @@ io.sockets.on('connect', function(socket)
 
   socket.on("test_socket", function()
   {
+    modLog("Connection has requested a socket test: " + socket.id);
+      
     socket.emit("test_return", function()
     {
 
+
     });
+  });
+  
+  socket.on("disconnect", function()
+  {
+      modLog("Bye bye user: " + socket.id);
+      currentConnections = currentConnections -1;
   });
 
   socket.on("update_steering_servo_value", function(data)

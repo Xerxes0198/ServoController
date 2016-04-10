@@ -1,4 +1,4 @@
-var socketio;
+var socketio = io();
 
 $(document).ready(function()
 {
@@ -41,7 +41,6 @@ $(document).ready(function()
       //socketio = io.connect(generatedServerAddress);
     });
 
-    /*
     socketio.on("return_data", function(data)
     {
       console.log("Server said: " + data["ServoValue"]);
@@ -57,6 +56,7 @@ $(document).ready(function()
   {
 
   }*/
+  
 });
 
 function testSocket()
@@ -68,6 +68,14 @@ function testSocket()
   socketio.on("test_return", function()
   {
     //ADAFS
-    toastr.warning("The server hit me back! The socket is active");
+    toastr.success("The server hit me back! The socket is active");
   });
+}
+
+function broadcastMessage()
+{
+    console.log($("#txtBroadcast").value);
+    //Get the text
+ 
+    
 }

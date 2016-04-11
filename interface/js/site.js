@@ -1,4 +1,4 @@
-var socketio = io();
+var socketio;
 
 $(document).ready(function()
 {
@@ -25,27 +25,21 @@ $(document).ready(function()
   };
 
   //Attempt to start socket connection
-  /*
   try
   {
-    //Use jQuery to load in the script from a dymanically generated location    <!--Load the socket JS stuff as soon as possible -->
-    //<script src="http://192.168.178.47:13378/socket.io/socket.io.js"></script>
-    var serverIP = String(location.host).substring(0, String(location.host).indexOf(":"));
-    var socketPort = "13378";
-    var generatedServerAddress =  serverIP + ":" + socketPort;
-    alert("Dymanically generated address: " + generatedServerAddress);
-
-    $.getScript(generatedServerAddress + "/socket.io/socket.io.js", function()
-    {
-      //Create socket and connect to server
-      //socketio = io.connect(generatedServerAddress);
-    });
+    socketio = io();
 
     socketio.on("return_data", function(data)
     {
-      console.log("Server said: " + data["ServoValue"]);
-      console.log("Server said: " + data["Temp"]);
-      console.log("Server said: " + data);
+        console.log("Server said: " + data["ServoValue"]);
+        console.log("Server said: " + data["Temp"]);
+        console.log("Server said: " + data);
+    });
+    
+    socketio.on("retBroadcast", function(message)
+    {
+        console.log("Ret Broadcast received");
+        
     });
   }
   catch (e)
@@ -55,7 +49,7 @@ $(document).ready(function()
   finally
   {
 
-  }*/
+  }
   
 });
 
@@ -76,6 +70,5 @@ function broadcastMessage()
 {
     console.log($("#txtBroadcast").value);
     //Get the text
- 
     
 }

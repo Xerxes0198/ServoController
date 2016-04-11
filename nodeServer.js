@@ -51,12 +51,10 @@ io.sockets.on('connect', function(socket)
     
     modLog("Socket connected with id of: " + socket.id);
     
-	socket.on("btn_pressed", function(data)
+	socket.on("broadCast", function(data)
 	{
-		modLog("Button pressed: " + data["DummyData"]);
-    //var readString = dataReader.updateData();
-    //console.log(dataReader.updateData());
-    //io.sockets.emit("return_data", readString)
+		modLog("Broadcast pressed: " + data["DummyData"]);
+        
 	});
 
   //Create a function to request initial values

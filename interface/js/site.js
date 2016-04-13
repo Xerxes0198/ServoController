@@ -38,7 +38,7 @@ $(document).ready(function()
     
     socketio.on("retBroadcast", function(message)
     {
-        console.log("Ret Broadcast received");
+        console.log("Ret Broadcast received: " + message);
         
     });
   }
@@ -68,7 +68,8 @@ function testSocket()
 
 function broadcastMessage()
 {
-    console.log($("#txtBroadcast").value);
+    console.log("Broadcasting: " + $("#txtBroadcast").val());
     //Get the text
+    socketio.emit("broadcastMessage", {message : $("#txtBroadcast").val()});
     
 }

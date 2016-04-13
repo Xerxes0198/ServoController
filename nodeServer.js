@@ -51,10 +51,10 @@ io.sockets.on('connect', function(socket)
     
     modLog("Socket connected with id of: " + socket.id);
     
-	socket.on("broadCast", function(data)
+	socket.on("broadcastMessage", function(data)
 	{
-		modLog("Broadcast pressed: " + data["DummyData"]);
-        
+		modLog("Broadcast pressed: " + data["message"]);
+        io.emit("retBroadcast", "test");
 	});
 
   //Create a function to request initial values
@@ -74,7 +74,6 @@ io.sockets.on('connect', function(socket)
       
     socket.emit("test_return", function()
     {
-
 
     });
   });

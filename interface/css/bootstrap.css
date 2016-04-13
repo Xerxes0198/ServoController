@@ -10,8 +10,13 @@ html {
       -ms-text-size-adjust: 100%;
 }
 body {
-  margin: 0;
+  padding-top: 50px;
 }
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
 article,
 aside,
 details,

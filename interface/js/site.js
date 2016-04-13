@@ -35,11 +35,10 @@ $(document).ready(function()
         console.log("Server said: " + data["Temp"]);
         console.log("Server said: " + data);
     });
-    
+
     socketio.on("retBroadcast", function(message)
     {
-        console.log("Ret Broadcast received: " + message);
-        
+        toastr.info("BROADCAST: " + message);
     });
   }
   catch (e)
@@ -50,7 +49,7 @@ $(document).ready(function()
   {
 
   }
-  
+
 });
 
 function testSocket()
@@ -71,5 +70,7 @@ function broadcastMessage()
     console.log("Broadcasting: " + $("#txtBroadcast").val());
     //Get the text
     socketio.emit("broadcastMessage", {message : $("#txtBroadcast").val()});
-    
+
+    //Clear the text box
+    $("#txtBroadcast").val("");
 }

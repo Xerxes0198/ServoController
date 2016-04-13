@@ -48,13 +48,13 @@ http.listen(port,function(request, response)
 io.sockets.on('connect', function(socket)
 {
     currentConnections = currentConnections + 1;
-    
+
     modLog("Socket connected with id of: " + socket.id);
-    
+
 	socket.on("broadcastMessage", function(data)
 	{
 		modLog("Broadcast pressed: " + data["message"]);
-        io.emit("retBroadcast", "test");
+        io.emit("retBroadcast", data["message"]);
 	});
 
   //Create a function to request initial values
@@ -71,13 +71,13 @@ io.sockets.on('connect', function(socket)
   socket.on("test_socket", function()
   {
     modLog("Connection has requested a socket test: " + socket.id);
-      
+
     socket.emit("test_return", function()
     {
 
     });
   });
-  
+
   socket.on("disconnect", function()
   {
       modLog("Bye bye user: " + socket.id);

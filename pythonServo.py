@@ -22,11 +22,11 @@ class Servo:
         self.servo_current   = values[3];
 
     #Get the current values
-    def getCurrentValue():
-        return int(self.servo_current);
+    def getCurrentValue(self):
+        return float(self.servo_current);
 
     #Get the current pin
-    def getPin():
+    def getPin(self):
         return int(self.servo_pin);
 
 

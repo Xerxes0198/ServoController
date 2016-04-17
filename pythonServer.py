@@ -29,7 +29,7 @@ pythonServoController.getServos()
 
 #Write Functions Here
 def outputValues():
-	pythonServoController.outputServoValues();
+	#pythonServoController.outputServoValues();
 	return
 
 def updateValues():

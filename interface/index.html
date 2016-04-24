@@ -10,6 +10,7 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
     <link href="css/toastr.min.css" rel="stylesheet"/>
+    <link href="css/roundslider.min.css" rel="stylesheet"/>
     <script src="/socket.io/socket.io.js"></script>
   </head>
 
@@ -46,6 +47,13 @@
       </div>
     </div>
 
+    <div id="controls" class="jumbotron">
+      <div class="container">
+        <!--Create steerign slider -->
+        <div id="arc-slider" class="rslider"> </div>
+      </div>
+    </div>
+
     <div>
         <input id="txtBroadcast"/>
         <button class="btn btn-primary" onClick="broadcastMessage()"> Broadcast! </button>
@@ -57,6 +65,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/site.js"></script>
     <script src="js/toastr.min.js"></script>
+    <script src="js/roundslider.min.js"></script>
   </body>
 
   <!-- Modal -->

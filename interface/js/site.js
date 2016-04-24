@@ -6,6 +6,15 @@ $(document).ready(function()
     $("#jmbHello").hide();
   })
 
+  //Setup slider for steering
+  $("#arc-slider").roundSlider({
+      radius: 80,
+      circleShape: "half-top",
+      sliderType: "min-range",
+      showTooltip: true,
+      value: 50
+  });
+
   toastr.options = {
   "closeButton": false,
   "debug": false,

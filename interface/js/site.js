@@ -1,5 +1,35 @@
 var socketio;
 
+var mouseDownCurrently = false;
+var sliderControl, oldSliderValue;
+
+
+
+function sendMouseUpdates()
+{
+  if(mouseDownCurrently == true)
+  {
+    //Only hassle the socket connection if there is a change in value!
+    if($("#arc-slider").data("roundSlider").getValue() != oldSliderValue)
+    {
+      console.log("Sending steering update: " + $("#arc-slider").data("roundSlider").getValue());
+
+      //Send Value
+      socketio.emit("update_steering_servo_value", $("#arc-slider").data("roundSlider").getValue());
+
+      //Update old slider value
+      oldSliderValue = $("#arc-slider").data("roundSlider").getValue();
+    }
+    setTimeout(sendMouseUpdates, 10, 1);
+  }
+}
+
+function mouseDownToggle()
+{
+  mouseDownCurrently = !mouseDownCurrently;
+  sendMouseUpdates();
+}
+    
 $(document).ready(function()
 {
   $("#btnYeahYeah").click(function(e){
@@ -13,6 +43,18 @@ $(document).ready(function()
       sliderType: "min-range",
       showTooltip: true,
       value: 50
+  });
+  
+  $("#arc-slider").mousedown(function()
+  {
+    console.log("Mouse Down on slider!");
+    mouseDownToggle();
+  });
+  
+  $("#arc-slider").mouseup(function()
+  {
+    console.log("Mouse released from slider!");
+    mouseDownToggle();
   });
 
   toastr.options = {

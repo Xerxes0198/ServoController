@@ -9,6 +9,10 @@ var servoController = require('./nodeServoController.js');
 var port = 13378;
 var currentConnections = 0;
 
+//Connection for controller
+var controllerId;
+var controllerConnected = false;
+
 //Global log funciton for thie module
 function modLog(message)
 {
@@ -47,6 +51,11 @@ http.listen(port,function(request, response)
 //Setup socket server side
 io.sockets.on('connect', function(socket)
 {
+  //Set this as the first user if no current connections
+  if(currentConnections == 0)
+  {
+    controllerId = socket.id;
+  }
     currentConnections = currentConnections + 1;
 
     modLog("Socket connected with id of: " + socket.id);
@@ -82,28 +91,44 @@ io.sockets.on('connect', function(socket)
   {
       modLog("Bye bye user: " + socket.id);
       currentConnections = currentConnections -1;
+      
+      if(socket.id == controllerId)
+      {
+        controllerConnected = false;
+        controllerId = null;
+        modLog("Controller has relinguished control, make way for the next controller.");
+      }
   });
 
   socket.on("update_steering_servo_value", function(data)
   {
-    var newVal = parseInt(data);
-    if(Number.isInteger(newVal))
+    //If this socket ID is the current socket in control of the car, update the servo
+    if(socket.id == controllerId)
     {
-      if(newVal <= 100 && newVal > 0)
+      var newVal = parseInt(data);
+      if(Number.isInteger(newVal))
       {
-        modLog("Updateing steering servo to value: " + data);
+        if(newVal <= 100 && newVal > 0)
+        {
+          modLog("Updateing steering servo to value: " + data);
 
-        //Write this value to the FS
-        //FIX Harcoding of servo name is probably not best..
-        servoController.updateServo("steering_servo", data);
-      }
-      else
-      {
-        //An invalid value has been passed through the socket connection...
-        modLog("A bad value was passed to the server! Ignore input.");
+          //Write this value to the FS
+          //FIX Harcoding of servo name is probably not best..
+          servoController.updateServo("steering_servo", data);
+        }
+        else
+        {
+          //An invalid value has been passed through the socket connection...
+          modLog("A bad value was passed to the server! Ignore input.");
 
-        //Destroy connection??
+          //Destroy connection??
+        }
       }
+    }
+    else
+    {
+      //Someone who is not in control has sent a command.. tsk tsk.
+      modLog("Greg, fix this.. Make a funny message to the dodgy user or something...");
     }
   });
 });

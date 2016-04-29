@@ -129,6 +129,7 @@ io.sockets.on('connect', function(socket)
     {
       //Someone who is not in control has sent a command.. tsk tsk.
       modLog("Greg, fix this.. Make a funny message to the dodgy user or something...");
+      socket.emit('privateMessageqqq', "Sorry, it's not your turn to drive! You will have to wait.");
     }
   });
 });

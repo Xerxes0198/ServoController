@@ -91,6 +91,11 @@ $(document).ready(function()
     {
         toastr.info("BROADCAST: " + message);
     });
+    
+    socketio.on("privateMessage", function(message)
+    {
+      toastr.info(message);
+    });
   }
   catch (e)
   {

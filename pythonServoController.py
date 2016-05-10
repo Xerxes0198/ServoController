@@ -44,8 +44,7 @@ def getServos():
 def updateServos():
     for servo in servos:
         servo.updateFromFile();
-        pwm.setPWM(0, servo.getPin(), int(servo.getCurrentValue()));
-
+        pwm.setPWM(servo.getPin(), servo.getPin(), int(servo.getCurrentValue()));
 
 #Output all servo details
 def outputServoValues():

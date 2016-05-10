@@ -43,7 +43,7 @@ module.exports = function nodeServo(inFilePath)
       var calc = parseFloat(this.servo_max - this.servo_min);
       calc = calc * (v / 100);
       calc = parseFloat(calc) + parseFloat(this.servo_min);
-      this.servo_current = calc;
+      this.servo_current = parseInt(calc);
       this.logToConsole();
 
       this.writeNewValue(calc);

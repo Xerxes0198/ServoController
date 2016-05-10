@@ -11,15 +11,21 @@ class Servo:
 
     #Function to update the values from the File
     def updateFromFile(self):
+        try:
+            #open the file and do the magic
+            with open(self.SERVO_FILE_PATH, 'r') as file:
+                values = file.read().split(':');
 
-        #open the file and do the magic
-        with open(self.SERVO_FILE_PATH, 'r') as file:
-            values = file.read().split(':');
-
-        self.servo_pin       = values[0];
-        self.servo_min       = values[1];
-        self.servo_max       = values[2];
-        self.servo_current   = values[3];
+            self.servo_pin       = values[0];
+            self.servo_min       = values[1];
+            self.servo_max       = values[2];
+            self.servo_current   = values[3];
+        except: #An exception here probably means that the file has not completed being written to from the Node Server, and throws an out of range error.
+            print "Error reading in partially written file."
+            self.servo_pin       = 0
+            self.servo_min       = 0
+            self.servo_max       = 0
+            self.servo_current   = 0 #Resetting these values to zero may cause a flutter in servo updates. TODO: Update these to JSON Classes to be passed from service to service
 
     #Get the current values
     def getCurrentValue(self):

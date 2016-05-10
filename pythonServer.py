@@ -8,7 +8,7 @@ import json
 import pythonServoController
 
 #Debug Stuff
-debug = True
+debug = False
 DebugSleepTime = 1
 ReleaseSleepTime = float(0.01) #For some strange reason no sleep delay causes read errors. A small delay seems to help for now
 
@@ -29,7 +29,7 @@ pythonServoController.getServos()
 
 #Write Functions Here
 def outputValues():
-	#pythonServoController.outputServoValues();
+	pythonServoController.outputServoValues();
 	return
 
 def updateValues():
